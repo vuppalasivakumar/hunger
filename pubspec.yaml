@@ -11,6 +11,7 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  carousel_slider: ^4.2.1
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -19,4 +20,18 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  assets:
+   - assets/hungerlogo.jpeg
+   - assets/indianflag.png
+   - assets/google.png
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts\Montserrat-Regular.ttf
+        - asset: fonts\Montserrat-ExtraBold.ttf
+        - asset: fonts\Montserrat-SemiBold.ttf
+        - asset: fonts\Montserrat-Light.ttf
+        - asset: fonts\Montserrat-ExtraBoldItalic.ttf
+        - asset: fonts\Montserrat-BoldItalic.ttf
+  
 
