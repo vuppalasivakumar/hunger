@@ -5,11 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hunger/app/core/app_config/app_colors.dart';
 import 'package:hunger/app/core/app_config/app_sizes.dart';
+import 'package:hunger/app/routes/app_pages.dart';
+import 'package:hunger/app/services/firebase_controller.dart';
 
-import '../controllers/login_controller.dart';
+// import '../controllers/login_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+class LoginView extends GetView<FirebaseController> {
+  LoginView({super.key});
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -72,28 +76,11 @@ class LoginView extends GetView<LoginController> {
             height: 15.0,
           ),
 
-          // Container(
-          //     height: 50.0,
-          //     width: 70.0,
-          //     decoration: BoxDecoration(border: Border.all(width: 1.0)),
-          //     child: Padding(
-          //       padding: const EdgeInsets.all(8.0),
-          //       child: Row(
-          //         mainAxisAlignment: MainAxisAlignment.start,
-          //         crossAxisAlignment: CrossAxisAlignment.start,
-          //         // mainAxisSize: MainAxisSize.min,
-          //         children: [
-          //           Expanded(child: Image.asset('assets/indianflag.png')),
-          //           Icon(Icons.arrow_drop_down_sharp),
-          //         ],
-          //       ),
-          //     )),
-
           // ......text fields......//
           Padding(
-            padding: AppSizes.pageHorizontal,
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
             child: TextField(
-              controller: null,
+              controller: email,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -111,9 +98,9 @@ class LoginView extends GetView<LoginController> {
             height: 18.0,
           ),
           Padding(
-            padding: AppSizes.pageHorizontal,
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
             child: TextField(
-              controller: null,
+              controller: password,
               obscureText: true,
               obscuringCharacter: '*',
               keyboardType: TextInputType.number,
@@ -134,12 +121,14 @@ class LoginView extends GetView<LoginController> {
 
           // .......login button.........//
           TextButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.signUser(email.text, password.text);
+              },
               style: ButtonStyle(
                   backgroundColor:
                       WidgetStatePropertyAll(AppColors.rustedOrange)),
               child: Padding(
-                padding: AppSizes.buttonHorizontal,
+                padding: EdgeInsets.symmetric(horizontal: AppSizes.x7_75),
                 child: Text(
                   'Login',
                   // style: TextStyle(color: AppColors.white),
@@ -166,7 +155,9 @@ class LoginView extends GetView<LoginController> {
                     fontSize: 15.0),
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.SIGN_UP);
+                  },
                   child: Text('sign up',
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.w500,
@@ -195,7 +186,7 @@ class LoginView extends GetView<LoginController> {
           ),
           //  ........sign up with Google or more.......//
           Padding(
-            padding: AppSizes.onlyTopBottom,
+            padding: EdgeInsets.only(bottom: AppSizes.x1_88),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -204,7 +195,7 @@ class LoginView extends GetView<LoginController> {
                       border: Border.all(width: 2.0, color: AppColors.grey),
                       borderRadius: BorderRadius.circular(25.0)),
                   child: Padding(
-                      padding: AppSizes.smallAll,
+                      padding:EdgeInsets.all(AppSizes.x1_00),
                       child: GestureDetector(
                         onTap: () {},
                         child: Image.asset(
@@ -222,7 +213,7 @@ class LoginView extends GetView<LoginController> {
                       border: Border.all(width: 2.0, color: AppColors.grey),
                       borderRadius: BorderRadius.circular(25.0)),
                   child: Padding(
-                    padding: AppSizes.iconPadding,
+                    padding: EdgeInsets.all(AppSizes.x1_25),
                     child: GestureDetector(
                         onTap: () {}, child: Icon(Icons.more_horiz_rounded)),
                   ),

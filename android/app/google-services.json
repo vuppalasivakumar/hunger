@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260763732935",
+    "project_id": "hunger-4f87a",
+    "storage_bucket": "hunger-4f87a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260763732935:android:20530f5283084ff149a7e2",
+        "android_client_info": {
+          "package_name": "com.vita.hunger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE8mIpgCfiWtHnL_KIltVYDOKpeRedRNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
