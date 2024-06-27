@@ -1,5 +1,9 @@
+// ignore_for_file: constant_identifier_names, prefer_const_constructors
+
 import 'package:get/get.dart';
 
+import 'package:hunger/app/modules/combinational_products/bindings/combinational_products_binding.dart';
+import 'package:hunger/app/modules/combinational_products/views/combinational_products_view.dart';
 import 'package:hunger/app/modules/home/bindings/home_binding.dart';
 import 'package:hunger/app/modules/home/views/home_view.dart';
 import 'package:hunger/app/modules/login/bindings/login_binding.dart';
@@ -12,7 +16,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.COMBINATIONAL_PRODUCTS;
 
   static final routes = [
     GetPage(
@@ -30,5 +34,14 @@ class AppPages {
       page: () => SignUpView(),
       binding: SignUpBinding(),
     ),
+    GetPage(
+      name: _Paths.COMBINATIONAL_PRODUCTS,
+      page: () => CombinationalProductsView(),
+      binding: CombinationalProductsBinding(),
+    ),
   ];
 }
+
+class HOME {}
+
+class LOGIN {}
