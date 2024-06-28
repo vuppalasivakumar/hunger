@@ -3,15 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hunger/app/core/app_config/app_colors.dart';
 import 'package:hunger/app/core/app_config/app_sizes.dart';
-// import 'package:hunger/app/modules/sign_up/controllers/sign_up_controller.dart';
-import 'package:hunger/app/services/firebase_controller.dart';
-// import 'package:hunger/app/services/auth_services.dart';
-// import 'package:hunger/app/modules/sign_up/controllers/sign_up_controller.dart';
-// import 'package:hunger/app/services/firbase_controller.dart';
-// import 'package:hunger/app/services/firbase_controller.dart';
-// import 'package:hunger/app/routes/app_pages.dart';
+import 'package:hunger/app/routes/app_pages.dart';
 
-// import '../controllers/sign_up_controller.dart';
+import 'package:hunger/app/services/firebase_controller.dart';
 
 class SignUpView extends GetView<FirebaseController> {
   SignUpView({super.key});
@@ -23,17 +17,6 @@ class SignUpView extends GetView<FirebaseController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'SignUpView',
-          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-              fontFamily: 'Montserrat',
-              fontSize: 25.0,
-              fontWeight: FontWeight.w800,
-              fontStyle: FontStyle.italic),
-        ),
-        centerTitle: true,
-      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -49,7 +32,7 @@ class SignUpView extends GetView<FirebaseController> {
               const SizedBox(height: 20.0),
               //  text Fields
               Padding(
-                padding:EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
+                padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
                 child: TextField(
                   controller: firstname,
                   keyboardType: TextInputType.text,
@@ -128,7 +111,7 @@ class SignUpView extends GetView<FirebaseController> {
               TextButton(
                   onPressed: () {
                     controller.creatingUser(firstname.text, lastname.text,
-                        email.text, password.text);
+                        email.text, password.text, context);
                   },
                   style: ButtonStyle(
                       backgroundColor:
@@ -137,7 +120,6 @@ class SignUpView extends GetView<FirebaseController> {
                     padding: EdgeInsets.symmetric(horizontal: AppSizes.x7_75),
                     child: Text(
                       'Sign Up',
-                      // style: TextStyle(color: AppColors.white),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: AppColors.white,
                           fontSize: 15.0,
@@ -159,7 +141,9 @@ class SignUpView extends GetView<FirebaseController> {
                         fontSize: 15.0),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.LOGIN);
+                      },
                       child: Text('Login',
                           style: Theme.of(context)
                               .textTheme

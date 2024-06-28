@@ -12,4 +12,6 @@ class AppColors {
   static const rupeeBgColor = Color(0xff007d1d);
   static const ratingColor = Color(0xffcf9e05);
   static const linkTextColor = Color(0xff00315b);
+  static const blackColor = Color(0xff0a0a0a);
+
 }

@@ -8,8 +8,6 @@ import 'package:hunger/app/core/app_config/app_sizes.dart';
 import 'package:hunger/app/routes/app_pages.dart';
 import 'package:hunger/app/services/firebase_controller.dart';
 
-// import '../controllers/login_controller.dart';
-
 class LoginView extends GetView<FirebaseController> {
   LoginView({super.key});
   final TextEditingController email = TextEditingController();
@@ -26,7 +24,6 @@ class LoginView extends GetView<FirebaseController> {
             color: AppColors.white,
             child: Image.asset(
               'assets/hungerlogo.jpeg',
-              // fit: BoxFit.cover,
             ),
           ),
           SizedBox(
@@ -55,7 +52,7 @@ class LoginView extends GetView<FirebaseController> {
               )
             ],
           ),
-          SizedBox(
+          SizedBox( 
             height: 15.0,
           ),
           // ......login and signup text........//
@@ -63,7 +60,7 @@ class LoginView extends GetView<FirebaseController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Log in or sign up',
-                  // style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                 
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                       fontSize: 15.0,
                       fontWeight: FontWeight.w500,
@@ -103,7 +100,7 @@ class LoginView extends GetView<FirebaseController> {
               controller: password,
               obscureText: true,
               obscuringCharacter: '*',
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.text,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.0)),
@@ -122,7 +119,8 @@ class LoginView extends GetView<FirebaseController> {
           // .......login button.........//
           TextButton(
               onPressed: () {
-                controller.signUser(email.text, password.text);
+                controller.signUser(email.text, password.text, context);
+               
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -131,7 +129,7 @@ class LoginView extends GetView<FirebaseController> {
                 padding: EdgeInsets.symmetric(horizontal: AppSizes.x7_75),
                 child: Text(
                   'Login',
-                  // style: TextStyle(color: AppColors.white),
+                  
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: AppColors.white,
                       fontSize: 15.0,
@@ -148,7 +146,7 @@ class LoginView extends GetView<FirebaseController> {
             children: [
               Text(
                 'Create a new account ?',
-                // style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),
+                
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Montserrat',
@@ -164,7 +162,7 @@ class LoginView extends GetView<FirebaseController> {
                           fontFamily: 'Montserrat',
                           fontSize: 15.0,
                           color: AppColors.linkTextColor)
-                      // TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),
+                     
                       ))
             ],
           ),
@@ -195,7 +193,7 @@ class LoginView extends GetView<FirebaseController> {
                       border: Border.all(width: 2.0, color: AppColors.grey),
                       borderRadius: BorderRadius.circular(25.0)),
                   child: Padding(
-                      padding:EdgeInsets.all(AppSizes.x1_00),
+                      padding: EdgeInsets.all(AppSizes.x1_00),
                       child: GestureDetector(
                         onTap: () {},
                         child: Image.asset(
