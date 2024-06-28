@@ -11,6 +11,7 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  carousel_slider: ^4.2.1
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -19,4 +20,143 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  assets:
+    - assets/hungerlogo.jpeg
+    - assets/chocolatepastry.png
+    - assets/redvelvet.png
+    - assets/strawberry.png
+    - assets/cheesecake.png
+    - assets/cheesecakepastry.png
+    - assets/keema_biryani.png
+    - assets/thali.png
+    - assets/prawn_biryani.png
+    - assets/kfc.png
+    - assets/corn_burger.png
+    - assets/idli.png
+    - assets/paneer_biryani.png
+    - assets/mutton_biryani.png
+    - assets/dum_biryani.png
+    - assets/fried_rice.png
+    - assets/cheese_burger.png
+    - assets/chicken_burger.png
+    - assets/corn_burger.png
+    - assets/egg_burger.png
+    - assets/paneer_burger.png
+    - assets/veg_burger.png
+    - assets/burger.png
+    - assets/cake.png
+    - assets/giftbox.png.gif
+    - assets/burger.png
+    - assets/Biryani.png
+    - assets/paratha.png
+    - assets/northindian.png
+    - assets/chinese.png
+    - assets/dosa.png
+    - assets/pizza.png
+    - assets/fried_rice.png
+    - assets/idli.png
+    - assets/paneer.png
+    - assets/thali.png
+    - assets/veg meal.png
+    - assets/chinese.png
+    - assets/kfc.png
+    - assets/kfccombo.png
+    - assets/kgccombo2.png
+    - assets/biryani1.jpg
+    - assets/biryani4.jpg
+    - assets/biryani7.png
+    - assets/burgercombo.png
+    - assets/veg1.png
+    - assets/veg2.png
+    - assets/veg3.jpg
+    - assets/dosa.jpg
+    - assets/Idli1.JPG
+    - assets/puri.png
+    - assets/blackforest-_1_.png
+    - assets/chocolatecake.png
+    - assets/pinapple (1).png
+    - assets/choco_cake (1).png
+    - assets/mango (1).png
+    # - assets/blackforest-_1_.png
+    # - assets/hungerlogo.jpeg
+    # - assets/giftbox.png.gif
+    # - assets/Biryani.png
+    # - assets/biryani1.jpg
+    # - assets/cheese_burger.png
+    # - assets/chicken_biryani.png
+    # - assets/chicken_burger.png
+    # - assets/choco_cake (1).png
+    # - assets/corn_burger.png
+    # - assets/biryani4.jpg
+    # - assets/biryani7.png
+    # - assets/dosa.jpg
+    # - assets/dum_biryani.png
+    # - assets/egg_burger.png
+    # - assets/giftbox.png.gif
+    # - assets/hungerlogo.jpeg
+    # - assets/Idli1.JPG
+    # - assets/idli.png
+    # - assets/keema_biryani.png
+    # - assets/kfc.png
+    # - assets/kfccombo.png
+    # - assets/kgccombo2.png
+    # - assets/mango (1).png
+    # - assets/mutton_biryani.png
+    # - assets/paneer_biryani.png
+    # - assets/paneer_burger.png
+    # - assets/pinapple (1).png
+    # - assets/prawn_biryani.png
+    # - assets/puri.png
+    # - assets/veg_biryani.png
+    # - assets/veg1.png
+    # - assets/veg_burger.png
+    # - assets/veg2.png
+    # - assets/veg3.jpg
+    # - assets/walnut_1.webp
+  # ---------------------------------
+  # - assets/hungerlogo.jpeg
+  # - assets/giftbox.png.gif
+  # - assets/Biryani.png
+  # - assets/cake.png
+  # - assets/chicken_mandi.png
+  # - assets/chinese.png
+  # - assets/dosa.png
+  # - assets/fried_rice.png
+  # - assets/idli.png
+  # - assets/paneer.png
+  # - assets/pizza.png
+  # - assets/paratha.png
+  # - assets/thali.png
+  # - assets/veg meal.png
+  # - assets/northindian.png
+  # - assets/burger.png
+  # - assets/biryani4.jpg
+  # - assets/biryani1.jpg
+  # - assets/dosa.jpg
+  # - assets/biryani7.png
+  # - assets/idli1.JPG
+  # - assets/kfccombo.png
+  # - assets/kfc.png
+  # - assets/veg1.png
+  # - assets/kgccombo2.png
+  # - assets/puri.png
+  # - assets/keema_biryani.png
+  # - assets/dum_biryani.png
+  # - assets/blackforest-_1_.png
+  # - assets/burger.png
+  # - assets/cheese_burger.png
+  # - assets/mango (1).png
+  # - assets/pinapple (1).png
+  # - assets/choco_cake (1).png
+  # - assets/paneer_biryani.png
+  # - assets/prawn_biryani.png
+  # - assets/mutton_biryani.png
+  # - assets/veg2.png
+
+
+  
+  
+
+     
+  
 
