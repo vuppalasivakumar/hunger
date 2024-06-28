@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/combinational_products_controller.dart';
+import '../controllers/biryani.dart';
 
 class CombinationalProductsView
     extends GetView<CombinationalProductsController> {
@@ -429,21 +429,21 @@ class CombinationalProductsView
                       subtitle: const Padding(
                         padding: EdgeInsets.all(30.0),
                         child: Column(
-                          children: [Text("hotel"), Text('550/-')],
+                          children: [Text("my village restuarant"), Text('550/-')],
                         ),
                       ),
                     )),
                     Card(
                         child: ListTile(
                       title: Image.asset(
-                        "assets/strawberry.png",
+                        "assets/biryani-5.jpg",
                         height: 150,
                         width: 130,
                       ),
                       subtitle: const Padding(
                         padding: EdgeInsets.all(30.0),
                         child: Column(
-                          children: [Text("S"), Text('450/-')],
+                          children: [Text("Swetha hotel"), Text('450/-')],
                         ),
                       ),
                     )),

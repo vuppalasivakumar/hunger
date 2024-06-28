@@ -132,7 +132,7 @@ class SignUpView extends GetView<FirebaseController> {
                   },
                   style: ButtonStyle(
                       backgroundColor:
-                          WidgetStatePropertyAll(AppColors.rustedOrange)),
+                          MaterialStatePropertyAll(AppColors.rustedOrange)),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: AppSizes.x7_75),
                     child: Text(

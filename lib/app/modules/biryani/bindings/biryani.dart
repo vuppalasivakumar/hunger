@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../controllers/combinational_products_controller.dart';
+import '../controllers/biryani.dart';
 
 class CombinationalProductsBinding extends Bindings {
   @override
