@@ -12,6 +12,10 @@ dependencies:
   flutter: 
     sdk: flutter
   carousel_slider: ^4.2.1
+  carousel_slider: ^4.2.1
+  firebase_auth: ^5.1.0
+  cloud_firestore: ^5.0.1
+  firebase_core: ^3.1.0
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -20,12 +24,4 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
-  assets:
-   - assets/biryani_1.jpg
-   - assets/biryani_2.jpg
-   - assets/biryani-3.jpg
-   - assets/biryani-4.jpg
-   - assets/biryani-5.jpg
-   - assets/biryani-6.jpg
-
 
