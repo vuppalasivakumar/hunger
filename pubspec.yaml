@@ -11,6 +11,7 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  carousel_slider: ^4.2.1
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -19,4 +20,23 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  assets:
+   - assets/delivery_boy.png
+   - assets/delivery.png
+   - assets/food.png
+   - assets/food_delivery.png
+   - assets/free_dev.jpg
+   - assets/food1.webp
+   - assets/panner2.png
+   - assets/biriyani.png
+   - assets/veg_biriyani.png
+   - assets/biriyani_pulao.png
+   - assets/mutton-biryani.png
+   - assets/biriyani_dum.png
+   - assets/panner_masala.png
+   - assets/blackforest.png
+   - assets/cake-img.jpg
+   - assets/cake1.jpeg
+   - assets/cake2.jpeg
+   - assets/cake3.jpeg
 
