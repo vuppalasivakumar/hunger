@@ -1,5 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 
+import 'package:hunger/app/modules/carts/bindings/carts_binding.dart';
+import 'package:hunger/app/modules/carts/views/carts_view.dart';
 import 'package:hunger/app/modules/home/bindings/home_binding.dart';
 import 'package:hunger/app/modules/home/views/home_view.dart';
 import 'package:hunger/app/modules/login/bindings/login_binding.dart';
@@ -12,7 +16,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.CARTS;
 
   static final routes = [
     GetPage(
@@ -29,6 +33,11 @@ class AppPages {
       name: _Paths.SIGN_UP,
       page: () => SignUpView(),
       binding: SignUpBinding(),
+    ),
+    GetPage(
+      name: _Paths.CARTS,
+      page: () => const CartsView(),
+      binding: CartsBinding(),
     ),
   ];
 }
