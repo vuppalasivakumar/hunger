@@ -1,15 +1,19 @@
-// ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers
+ 
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:hunger/app/core/app_config/app_assets.dart';
+import 'package:hunger/app/core/app_config/app_colors.dart';
 import 'package:hunger/app/core/app_config/app_sizes.dart';
 import 'package:hunger/app/routes/app_pages.dart';
 
 import '../controllers/product_2_controller.dart';
 
 class Product2View extends GetView<Product2Controller> {
+  const Product2View({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,15 +31,15 @@ class Product2View extends GetView<Product2Controller> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Container(
-                child: const Column(
+              padding: const EdgeInsets.only(top: Appsizes.x1_50),
+              child: Container(color: Appcolor.white,
+                child:  Column(
                   children: [
                     Text(
                       'Burger',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.bold)
                     ),
                   ],
                 ),
@@ -52,7 +56,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/cheese_burger.png",
+                    Appassets.cheeseburger,
                     height: 150,
                     width: 130,
                   ),
@@ -67,7 +71,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/chicken_burger.png",
+                    Appassets.chickenburger,
                     height: 150,
                     width: 100,
                   ),onTap: (){},
@@ -81,7 +85,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/corn_burger.png",
+                    Appassets.cornburger,
                     height: 150,
                     width: 100,
                   ),onTap: (){},
@@ -95,7 +99,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/egg_burger.png",
+                    Appassets.eggburger,
                     height: 150,
                     width: 100,
                   ),onTap: (){},
@@ -109,7 +113,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/paneer_burger.png",
+                    Appassets.paneerburger,
                     height: 150,
                     width: 100,
                   ),onTap: (){},
@@ -123,7 +127,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/veg_burger.png",
+                    Appassets.vegburger,
                     height: 150,
                     width: 130,
                   ),onTap: (){},
@@ -137,7 +141,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/burger.png",
+                    Appassets.burger,
                     height: 150,
                     width: 130,
                   ),onTap: (){},
@@ -151,7 +155,7 @@ class Product2View extends GetView<Product2Controller> {
                 Card(
                     child: ListTile(
                   title: Image.asset(
-                    "assets/burgercombo.png",
+                    Appassets.burgercombo,
                     height: 150,
                     width: 130,
                   ),onTap: (){},
