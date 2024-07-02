@@ -36,7 +36,7 @@ class HomeView extends GetView<HomeController> {
       appBar: AppBar(
         title: CircleAvatar(
           radius: Appsizes.x4_00,
-          child:Image.asset(Appassets.hungerlogo),
+          child: Image.asset(Appassets.hungerlogo),
         ),
         actions: [
           IconButton(
@@ -136,15 +136,6 @@ class HomeView extends GetView<HomeController> {
                         children: [
                           Expanded(
                               child: GestureDetector(
-                            onTap: () {
-                              if (a[index]["title"] == "Cake") {
-                                Get.toNamed(Routes.PRODUCT_1);
-                              } else if (a[index]['title'] == "Burger") {
-                                Get.toNamed(Routes.PRODUCT_2);
-                              } else if (a[index]['title'] == "Northindian") {
-                                Get.toNamed(Routes.PRODUCT_3);
-                              }
-                            },
                             child: CircleAvatar(
                               radius: 50.0,
                               backgroundImage: AssetImage(
@@ -152,11 +143,13 @@ class HomeView extends GetView<HomeController> {
                               ),
                             ),
                           )),
-                          Text(a[index]["title"].toString(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium
-                                  ?.copyWith(fontSize: 16),),
+                          Text(
+                            a[index]["title"].toString(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontSize: 16),
+                          ),
                         ],
                       ),
                     );
@@ -165,12 +158,15 @@ class HomeView extends GetView<HomeController> {
             const SizedBox(
               height: 20.0,
             ),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "Main Dishes",
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 22),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium
+                      ?.copyWith(fontSize: 22),
                 ),
               ],
             ),
@@ -362,10 +358,10 @@ class HomeView extends GetView<HomeController> {
                   width: Appsizes.x4_25,
                   color: Appcolor.skyblue,
                 ),
-                 Text(
-                  "ALL RESTAURANTS",
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize:18,)
-                ),
+                Text("ALL RESTAURANTS",
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontSize: 18,
+                        )),
                 Container(
                   height: Appsizes.x0_25,
                   width: Appsizes.x4_25,
@@ -390,7 +386,8 @@ class HomeView extends GetView<HomeController> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: Appsizes.x1_25),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: Appsizes.x1_25),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -398,9 +395,13 @@ class HomeView extends GetView<HomeController> {
                                 children: [
                                   const Icon(Icons.sort),
                                   //const SizedBox(width: 8.0,),
-                                   Text(
-                                    'Sort',
-                                    style: Theme.of(context).textTheme.titleMedium?.copyWith( fontSize: 15,)                                  ),
+                                  Text('Sort',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.copyWith(
+                                            fontSize: 15,
+                                          )),
                                   IconButton(
                                       onPressed: () {},
                                       icon: const Icon(Icons.arrow_drop_down)),
@@ -419,15 +420,19 @@ class HomeView extends GetView<HomeController> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: Appsizes.x1_25),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: Appsizes.x1_25),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Row(
                               children: [
-                                 Text(
+                                Text(
                                   'Favourites',
-                                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 15 ) ,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(fontSize: 15),
                                 ),
                                 IconButton(
                                     onPressed: () {},
@@ -447,15 +452,19 @@ class HomeView extends GetView<HomeController> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: Appsizes.x1_25),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: Appsizes.x1_25),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Row(
                               children: [
-                               Text(
+                                Text(
                                   'Pure Veg',
-                                  style: Theme.of(context).textTheme.titleMedium?.copyWith( fontSize: 15), 
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(fontSize: 15),
                                 ),
                                 IconButton(
                                     onPressed: () {},
@@ -476,16 +485,18 @@ class HomeView extends GetView<HomeController> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: Appsizes.x1_25),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: Appsizes.x1_25),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Row(
                               children: [
-                                 Text(
-                                  'Cuisines',
-                                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 15 ) 
-                                ),
+                                Text('Cuisines',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(fontSize: 15)),
                                 IconButton(
                                     onPressed: () {},
                                     icon: const Icon(Icons.arrow_drop_down)),
@@ -504,16 +515,18 @@ class HomeView extends GetView<HomeController> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: Appsizes.x1_25),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: Appsizes.x1_25),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Row(
                               children: [
-                                 Text(
-                                  'Rating',
-                                  style: Theme.of(context).textTheme.titleMedium?.copyWith( fontSize: 15) 
-                                ),
+                                Text('Rating',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(fontSize: 15)),
                                 IconButton(
                                     onPressed: () {},
                                     icon: const Icon(Icons.star_border)),
@@ -524,18 +537,21 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ),
                   ),
-                  ],
+                ],
               ),
             ),
-             Padding(
-              padding:const EdgeInsets.only(top: Appsizes.x2_25, bottom: Appsizes.x1_50),
-              child: Text(
-                'Restaurents delivering to you',
-                style:
-                    Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: Appsizes.x2_75, color: Appcolor.grey)
-              ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: Appsizes.x2_25, bottom: Appsizes.x1_50),
+              child: Text('Restaurents delivering to you',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontSize: Appsizes.x2_75, color: Appcolor.grey)),
             ),
-           Text('Featured', style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Appcolor.grey)),
+            Text('Featured',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(color: Appcolor.grey)),
             Column(
               children: [
                 const Padding(padding: EdgeInsets.all(Appsizes.x1_25)),
@@ -550,9 +566,7 @@ class HomeView extends GetView<HomeController> {
                             child: Container(
                                 color: Appcolor.white,
                                 child: Image.asset(Appassets.kfccombo)),
-                            onTap: () {
-                              
-                            },
+                            onTap: () {},
                           ),
 
                           //kfc image2 start//
@@ -560,9 +574,7 @@ class HomeView extends GetView<HomeController> {
                             child: Container(
                                 color: Appcolor.white,
                                 child: Image.asset(Appassets.kfc)),
-                            onTap: () {
-                              
-                            },
+                            onTap: () {},
                           ),
 
                           //kfc image3 start//
@@ -571,9 +583,7 @@ class HomeView extends GetView<HomeController> {
                               color: Appcolor.white,
                               child: Image.asset(Appassets.kfccombo2),
                             ),
-                            onTap: () {
-                              
-                            },
+                            onTap: () {},
                           ),
                         ],
                         options: CarouselOptions(
@@ -585,12 +595,14 @@ class HomeView extends GetView<HomeController> {
                           viewportFraction: 1.5,
                         )),
                     ListTile(
-                      title:  Text(
-                        'KFC',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.black,
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.bold)
-                      ),
+                      title: Text('KFC',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold)),
                       trailing: Container(
                           padding: const EdgeInsets.all(Appsizes.x0_75),
                           decoration: BoxDecoration(
@@ -633,9 +645,7 @@ class HomeView extends GetView<HomeController> {
                           //bawarachi image1 start//
 
                           GestureDetector(
-                              onTap: () {
-                                
-                              },
+                              onTap: () {},
                               child: Container(
                                   color: Appcolor.white,
                                   child: Image.asset(Appassets.biryani1))),
@@ -643,9 +653,7 @@ class HomeView extends GetView<HomeController> {
                           //bawarachi image2 start//
 
                           GestureDetector(
-                            onTap: () {
-                              
-                            },
+                            onTap: () {},
                             child: Container(
                                 color: Appcolor.white,
                                 child: Image.asset(Appassets.biryani4)),
@@ -653,9 +661,7 @@ class HomeView extends GetView<HomeController> {
 
                           //bawarachi image3 start//
                           GestureDetector(
-                            onTap: () {
-                              
-                            },
+                            onTap: () {},
                             child: Container(
                                 color: Appcolor.white,
                                 child: Image.asset(Appassets.biryani7,
@@ -670,12 +676,14 @@ class HomeView extends GetView<HomeController> {
                           viewportFraction: 1.8,
                         )),
                     ListTile(
-                      title: Text(
-                        'BHAWARCHI',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.black,
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.bold)
-                      ),
+                      title: Text('BHAWARCHI',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold)),
                       trailing: Container(
                           padding: const EdgeInsets.all(Appsizes.x0_75),
                           decoration: BoxDecoration(
@@ -722,27 +730,21 @@ class HomeView extends GetView<HomeController> {
                         items: [
                           //platform image1 start
                           GestureDetector(
-                            onTap: () {
-                              
-                            },
+                            onTap: () {},
                             child: Container(
                                 color: Appcolor.white,
                                 child: Image.asset(Appassets.veg1)),
                           ),
                           //platform img2 start//
                           GestureDetector(
-                            onTap: () {
-                             
-                            },
+                            onTap: () {},
                             child: Container(
                                 color: Appcolor.white,
                                 child: Image.asset(Appassets.veg2)),
                           ),
                           //platform img3 start//
                           GestureDetector(
-                            onTap: () {
-                             
-                            },
+                            onTap: () {},
                             child: Container(
                               color: Appcolor.white,
                               child: Image.asset(Appassets.veg3),
@@ -757,12 +759,14 @@ class HomeView extends GetView<HomeController> {
                           viewportFraction: 1.5,
                         )),
                     ListTile(
-                      title:  Text(
-                        'PLATFORM 65',
-                        style:Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.black,
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.bold)
-                      ),
+                      title: Text('PLATFORM 65',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold)),
                       trailing: Container(
                           padding: const EdgeInsets.all(Appsizes.x0_75),
                           decoration: BoxDecoration(
@@ -806,27 +810,21 @@ class HomeView extends GetView<HomeController> {
                             items: [
                               //tiffin img1 start //
                               GestureDetector(
-                                onTap: () {
-                                  
-                                },
+                                onTap: () {},
                                 child: Container(
                                     color: Appcolor.white,
                                     child: Image.asset(Appassets.dosa)),
                               ),
                               //tiffin img2 start//
                               GestureDetector(
-                                onTap: () {
-                                  
-                                },
+                                onTap: () {},
                                 child: Container(
                                     color: Appcolor.white,
                                     child: Image.asset(Appassets.idli)),
                               ),
                               // tiffin img3 start//
                               GestureDetector(
-                                onTap: () {
-                                  
-                                },
+                                onTap: () {},
                                 child: Container(
                                   color: Appcolor.white,
                                   child: Image.asset(Appassets.puri),
@@ -841,12 +839,14 @@ class HomeView extends GetView<HomeController> {
                               viewportFraction: 1.5,
                             )),
                         ListTile(
-                          title:  Text(
-                            'TIFFINS KITCHEN ',
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.black,
-                                fontSize: 22.0,
-                                fontWeight: FontWeight.bold)
-                          ),
+                          title: Text('TIFFINS KITCHEN ',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
+                                      color: Colors.black,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.bold)),
                           trailing: Container(
                               padding: const EdgeInsets.all(Appsizes.x0_75),
                               decoration: BoxDecoration(
