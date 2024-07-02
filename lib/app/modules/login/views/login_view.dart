@@ -1,7 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:hunger/app/core/app_config/app_colors.dart';
 import 'package:hunger/app/core/app_config/app_sizes.dart';
@@ -19,7 +16,6 @@ class LoginView extends GetView<FirebaseController> {
         body: SingleChildScrollView(
       child: Column(
         children: [
-          //........ hunger image ....//
           Container(
             color: AppColors.white,
             child: Image.asset(
@@ -27,18 +23,16 @@ class LoginView extends GetView<FirebaseController> {
             ),
           ),
           SizedBox(
-            height: 15.0,
+            height: AppSizes.x1_88,
           ),
-          // .....Heading texts.....//
           Text(
             "India's Top Food Delivery",
             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                 fontFamily: 'Montserrat',
-                fontSize: 29.0,
+                fontSize: AppSizes.x3_62,
                 fontWeight: FontWeight.w800,
                 fontStyle: FontStyle.italic),
           ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -46,34 +40,29 @@ class LoginView extends GetView<FirebaseController> {
                 "and Dining App",
                 style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                     fontFamily: 'Montserrat',
-                    fontSize: 29.0,
+                    fontSize: AppSizes.x3_62,
                     fontWeight: FontWeight.w800,
                     fontStyle: FontStyle.italic),
               )
             ],
           ),
-          SizedBox( 
-            height: 15.0,
+          SizedBox(
+            height: AppSizes.x1_88,
           ),
-          // ......login and signup text........//
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Log in or sign up',
-                 
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontSize: 15.0,
+                      fontSize: AppSizes.x1_88,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Montserrat',
                       fontStyle: FontStyle.normal)),
             ],
           ),
-
           SizedBox(
-            height: 15.0,
+            height: AppSizes.x1_88,
           ),
-
-          // ......text fields......//
           Padding(
             padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
             child: TextField(
@@ -81,18 +70,18 @@ class LoginView extends GetView<FirebaseController> {
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                    borderRadius: BorderRadius.circular(AppSizes.x1_88),
                   ),
                   prefixIcon: Icon(Icons.mail),
                   hintText: 'Enter your Email',
                   hintStyle: Theme.of(context)
                       .textTheme
                       .titleMedium
-                      ?.copyWith(fontFamily: 'Montserrat', fontSize: 16.0)),
+                      ?.copyWith(fontFamily: 'Montserrat', fontSize: AppSizes.x2_00)),
             ),
           ),
           SizedBox(
-            height: 18.0,
+            height: AppSizes.x2_25,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
@@ -103,24 +92,21 @@ class LoginView extends GetView<FirebaseController> {
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0)),
+                      borderRadius: BorderRadius.circular(AppSizes.x1_88)),
                   prefixIcon: Icon(Icons.remove_red_eye),
                   hintText: 'Enter your Password',
                   hintStyle: Theme.of(context)
                       .textTheme
                       .titleMedium
-                      ?.copyWith(fontFamily: 'Montserrat', fontSize: 16.0)),
+                      ?.copyWith(fontFamily: 'Montserrat', fontSize: AppSizes.x2_00)),
             ),
           ),
           SizedBox(
-            height: 15.0,
+            height: AppSizes.x1_88,
           ),
-
-          // .......login button.........//
           TextButton(
               onPressed: () {
                 controller.signUser(email.text, password.text, context);
-               
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -129,28 +115,25 @@ class LoginView extends GetView<FirebaseController> {
                 padding: EdgeInsets.symmetric(horizontal: AppSizes.x7_75),
                 child: Text(
                   'Login',
-                  
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: AppColors.white,
-                      fontSize: 15.0,
+                      fontSize: AppSizes.x1_88,
                       fontWeight: FontWeight.w800,
                       fontFamily: 'Montserrat'),
                 ),
               )),
           SizedBox(
-            height: 2.0,
+            height: AppSizes.x0_25,
           ),
-          // ........sign up button.......//
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Create a new account ?',
-                
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Montserrat',
-                    fontSize: 15.0),
+                    fontSize: AppSizes.x1_88),
               ),
               TextButton(
                   onPressed: () {
@@ -160,16 +143,13 @@ class LoginView extends GetView<FirebaseController> {
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.w500,
                           fontFamily: 'Montserrat',
-                          fontSize: 15.0,
-                          color: AppColors.linkTextColor)
-                     
-                      ))
+                          fontSize: AppSizes.x1_88,
+                          color: AppColors.linkTextColor)))
             ],
           ),
           SizedBox(
-            height: 2.0,
+            height: AppSizes.x0_25,
           ),
-          //.......or text.....//
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -178,11 +158,10 @@ class LoginView extends GetView<FirebaseController> {
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Montserrat',
-                    fontSize: 15.0),
+                    fontSize: AppSizes.x1_88),
               ),
             ],
           ),
-          //  ........sign up with Google or more.......//
           Padding(
             padding: EdgeInsets.only(bottom: AppSizes.x1_88),
             child: Row(
@@ -190,26 +169,26 @@ class LoginView extends GetView<FirebaseController> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(width: 2.0, color: AppColors.grey),
-                      borderRadius: BorderRadius.circular(25.0)),
+                      border: Border.all(width: AppSizes.x0_25, color: AppColors.grey),
+                      borderRadius: BorderRadius.circular(AppSizes.x3_12)),
                   child: Padding(
                       padding: EdgeInsets.all(AppSizes.x1_00),
                       child: GestureDetector(
                         onTap: () {},
                         child: Image.asset(
                           'assets/google.png',
-                          height: 30,
-                          width: 30,
+                          height: AppSizes.x3_75,
+                          width: AppSizes.x3_75,
                         ),
                       )),
                 ),
                 SizedBox(
-                  width: 20.0,
+                  width: AppSizes.x2_50,
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      border: Border.all(width: 2.0, color: AppColors.grey),
-                      borderRadius: BorderRadius.circular(25.0)),
+                      border: Border.all(width: AppSizes.x0_25, color: AppColors.grey),
+                      borderRadius: BorderRadius.circular(AppSizes.x3_12)),
                   child: Padding(
                     padding: EdgeInsets.all(AppSizes.x1_25),
                     child: GestureDetector(
@@ -220,9 +199,8 @@ class LoginView extends GetView<FirebaseController> {
             ),
           ),
           SizedBox(
-            height: 10.0,
+            height: AppSizes.x1_25,
           ),
-          // .....terms and policy......//
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -231,7 +209,7 @@ class LoginView extends GetView<FirebaseController> {
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Montserrat',
-                    fontSize: 13.0),
+                    fontSize: AppSizes.x1_62),
               )
             ],
           ),
@@ -243,7 +221,7 @@ class LoginView extends GetView<FirebaseController> {
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Montserrat',
-                    fontSize: 13.0),
+                    fontSize: AppSizes.x1_62),
               )
             ],
           )
