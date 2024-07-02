@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:hunger/app/core/app_config/app_sizes.dart';
 
 import '../controllers/paratha_controller.dart';
 
@@ -39,7 +40,7 @@ class ParathaView extends GetView<ParathaController> {
                 final product = entry.value;
                 return Card(
                   child: ListTile(
-                    title: SizedBox(height:140,
+                    title: SizedBox(height: AppSizes.x1_90,
                     child: InkWell(child: Image.network(product['image'] ?? "",fit: BoxFit.fill),onTap: () {
                       
                     },)),

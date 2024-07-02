@@ -4,4 +4,5 @@ class AppSizes {
   static const x7_75 = 62.0;
   static const x2_90 = 23.0;
   static const x1_88 = 15.0;
+  static const x1_90 = 140.0;
 }
