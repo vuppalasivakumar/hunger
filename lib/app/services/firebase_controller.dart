@@ -34,7 +34,7 @@ class FirebaseController extends GetxController {
           ),
           snackPosition: SnackPosition.BOTTOM,
           overlayBlur: AppSizes.x0_25,
-          margin: EdgeInsets.all(AppSizes.x0_25),
+          margin: EdgeInsets.all(AppSizes.x1_62),
           backgroundColor: AppColors.skyBlue);
     }
   }
@@ -65,7 +65,7 @@ class FirebaseController extends GetxController {
               ),
               snackPosition: SnackPosition.BOTTOM,
               overlayBlur: AppSizes.x0_25,
-              margin: EdgeInsets.all(AppSizes.x0_25),
+              margin: EdgeInsets.all(AppSizes.x1_62),
               backgroundColor: AppColors.skyBlue));
       Get.toNamed(Routes.HOME);
     } catch (error) {
@@ -88,7 +88,7 @@ class FirebaseController extends GetxController {
           ),
           snackPosition: SnackPosition.BOTTOM,
           overlayBlur: AppSizes.x0_25,
-          margin: EdgeInsets.all(AppSizes.x0_25),
+          margin: EdgeInsets.all(AppSizes.x1_62),
           backgroundColor: AppColors.skyBlue);
     }
   }
