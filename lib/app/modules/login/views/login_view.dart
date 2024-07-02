@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,10 +11,10 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('LoginView'),
+        title: const Text('LoginView'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'LoginView is working',
           style: TextStyle(fontSize: 20),
