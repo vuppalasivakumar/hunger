@@ -13,6 +13,7 @@ abstract class Routes {
   static const SERVICES = _Paths.SERVICES;
   static const FIREBASE_AUTH = _Paths.FIREBASE_AUTH;
   static const CAKES = _Paths.CAKES;
+  static const PARATHA = _Paths.PARATHA;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const SERVICES = '/services';
   static const FIREBASE_AUTH = '/firebase-auth';
   static const CAKES = '/cakes';
+  static const PARATHA = '/paratha';
 }
