@@ -1,12 +1,7 @@
-// import 'dart:js';
-
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
-// import 'package:flutter/widgets.dart';
-// import 'package:flutter/widgets.dart';
-
 import 'package:get/get.dart';
+import 'package:hunger/app/core/app_config/app_colors.dart';
+import 'package:hunger/app/core/app_config/app_sizes.dart';
 import 'package:hunger/app/routes/app_pages.dart';
 
 import '../controllers/profil_page_controller.dart';
@@ -26,29 +21,27 @@ class ProfilPageView extends GetView<ProfilPageController> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Card(
-                color: Colors.white,
+                color: AppColors.white,
                 child: ListTile(
                     leading: CircleAvatar(
-                      radius: 35.0,
+                      radius: AppSizes.x4_37,
                       child: IconButton(
                         onPressed: () {
                           Get.toNamed(Routes.PROFILE_DETAILS);
                         },
                         icon: const Icon(Icons.person),
-                        iconSize: 25,
+                        iconSize: AppSizes.x3_12,
                       ),
                     ),
-                    title: const Text(
+                    title: Text(
                       "Suresh",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20.0),
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold, fontSize: AppSizes.x2_5),
                     ),
                     subtitle: TextButton(
-                        onPressed: () {
-                          Get.toNamed(Routes.FOOD_ITEMS);
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.only(right: 20.0),
+                        onPressed: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: AppSizes.x2_5),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.vertical,
                             child: Row(
@@ -56,12 +49,15 @@ class ProfilPageView extends GetView<ProfilPageController> {
                               children: [
                                 Text(
                                   "View activity",
-                                  style: TextStyle(color: Colors.red),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(color: AppColors.rustedOrange),
                                 ),
-                                Icon(
+                                const Icon(
                                   Icons.arrow_right,
-                                  size: 15.0,
-                                  color: Colors.red,
+                                  size: AppSizes.x1_87,
+                                  color: AppColors.rustedOrange,
                                 )
                               ],
                             ),
@@ -74,12 +70,12 @@ class ProfilPageView extends GetView<ProfilPageController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      width: 200,
+                      width: AppSizes.x25_00,
                       child: Card(
-                        color: Colors.white,
+                        color: AppColors.white,
                         child: ListTile(
                           title: CircleAvatar(
-                            backgroundColor: Colors.grey[200],
+                            backgroundColor: AppColors.white,
                             child: IconButton(
                                 onPressed: () {},
                                 icon:
@@ -87,22 +83,25 @@ class ProfilPageView extends GetView<ProfilPageController> {
                           ),
                           subtitle: TextButton(
                               onPressed: () {
-                                 Get.toNamed(Routes.PRODUCT_DETAILS);
+                                Get.toNamed(Routes.PRODUCT_DETAILS);
                               },
-                              child: const Text(
+                              child: Text(
                                 "Favourites",
-                                style: TextStyle(color: Colors.black),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleSmall
+                                    ?.copyWith(color: AppColors.blackColor),
                               )),
                         ),
                       ),
                     ),
                     SizedBox(
-                      width: 200,
+                      width: AppSizes.x25_00,
                       child: Card(
-                        color: Colors.white,
+                        color: AppColors.white,
                         child: ListTile(
                           title: CircleAvatar(
-                            backgroundColor: Colors.grey[200],
+                            backgroundColor: AppColors.white,
                             child: IconButton(
                                 onPressed: () {},
                                 icon: const Icon(Icons.currency_rupee)),
@@ -111,25 +110,29 @@ class ProfilPageView extends GetView<ProfilPageController> {
                             children: [
                               TextButton(
                                   onPressed: () {},
-                                  child: const Text("Money",
-                                      style: TextStyle(color: Colors.black))),
+                                  child: Text(
+                                    "Money",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall
+                                        ?.copyWith(color: AppColors.blackColor),
+                                  )),
                               IconButton(
-                                  style: ButtonStyle(
+                                  style: const ButtonStyle(
                                       backgroundColor: MaterialStatePropertyAll(
-                                          Colors.green.shade50)),
+                                          AppColors.oliveGreenShade)),
                                   onPressed: () {},
                                   icon: Row(
                                     children: [
-                                      Icon(
-                                        Icons.currency_rupee,
-                                        size: 15,
-                                        color: Colors.green[400],
-                                      ),
-                                      Text(
-                                        "0",
-                                        style:
-                                            TextStyle(color: Colors.green[400]),
-                                      )
+                                      const Icon(Icons.currency_rupee,
+                                          size: AppSizes.x1_87,
+                                          color: AppColors.rupeeColor),
+                                      Text("0",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleSmall
+                                              ?.copyWith(
+                                                  color: AppColors.rupeeColor))
                                     ],
                                   )),
                             ],
@@ -141,10 +144,10 @@ class ProfilPageView extends GetView<ProfilPageController> {
                 ),
               ),
               Card(
-                color: Colors.white,
+                color: AppColors.white,
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: Colors.grey[200],
+                    backgroundColor: AppColors.grey,
                     child: IconButton(
                       onPressed: () {},
                       icon: const Icon(Icons.person),
@@ -152,19 +155,27 @@ class ProfilPageView extends GetView<ProfilPageController> {
                   ),
                   title: TextButton(
                       onPressed: () {},
-                      child: const Text("Your profile",
-                          style: TextStyle(color: Colors.black))),
+                      child: Text(
+                        "Your profile",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall
+                            ?.copyWith(color: AppColors.blackColor),
+                      )),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       TextButton(
-                          style: ButtonStyle(
+                          style: const ButtonStyle(
                               backgroundColor: MaterialStatePropertyAll(
-                                  Colors.green.shade100)),
+                                  AppColors.oliveGreenShade)),
                           onPressed: () {},
-                          child: const Text(
+                          child: Text(
                             "64% completed",
-                            style: TextStyle(color: Colors.green),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.oliveGreen),
                           )),
                       IconButton(
                           onPressed: () {},
@@ -175,10 +186,10 @@ class ProfilPageView extends GetView<ProfilPageController> {
                 ),
               ),
               Card(
-                color: Colors.white,
+                color: AppColors.white,
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: Colors.grey[200],
+                    backgroundColor: AppColors.white,
                     child: IconButton(
                       onPressed: () {},
                       icon: const Icon(Icons.star_border_outlined),
@@ -186,29 +197,33 @@ class ProfilPageView extends GetView<ProfilPageController> {
                   ),
                   title: TextButton(
                       onPressed: () {},
-                      child: const Text("Your rating",
-                          style: TextStyle(color: Colors.black))),
+                      child: Text(
+                        "Your rating",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall
+                            ?.copyWith(color: AppColors.blackColor),
+                      )),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
                         children: [
                           TextButton(
-                              style: ButtonStyle(
+                              style: const ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
-                                      Colors.grey.shade200)),
+                                      AppColors.white)),
                               onPressed: () {},
                               child: const Row(
                                 children: [
                                   Text('4.39'),
                                   Icon(
                                     Icons.star,
-                                    size: 15,
-                                    color: Colors.amber,
+                                    size: AppSizes.x1_87,
+                                    color: AppColors.ratingColor,
                                   ),
                                 ],
                               )),
-                          // IconButton(onPressed: (){}, icon: Icon(Icons.star_rate),iconSize: 10,),Text("4.39",style: TextStyle(color: Colors.black),)),
                         ],
                       ),
                       IconButton(
@@ -220,7 +235,7 @@ class ProfilPageView extends GetView<ProfilPageController> {
                 ),
               ),
               Card(
-                color: Colors.white,
+                color: AppColors.white,
                 child: Column(
                   children: [
                     const ListTile(
@@ -229,14 +244,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.book_online_outlined))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Your orders",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Your orders",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -244,15 +264,20 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon:
                                   const Icon(Icons.favorite_border_outlined))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Favorite orders",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Favorite orders",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -260,7 +285,7 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.menu_book_sharp))),
@@ -268,8 +293,13 @@ class ProfilPageView extends GetView<ProfilPageController> {
                           onPressed: () {
                             Get.toNamed(Routes.ADDRESS);
                           },
-                          child: const Text("Address book",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Address book",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {
                             Get.toNamed(Routes.ADDRESS);
@@ -279,14 +309,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.remove_red_eye_outlined))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Hidden Restaurants",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Hidden Restaurants",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -294,14 +329,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.message))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Online ordering help",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Online ordering help",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -311,23 +351,31 @@ class ProfilPageView extends GetView<ProfilPageController> {
                 ),
               ),
               Card(
-                color: Colors.white,
+                color: AppColors.white,
                 child: Column(
                   children: [
-                    const ListTile(
+                    ListTile(
                       title: Text("Money",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall
+                              ?.copyWith(fontWeight: FontWeight.bold)),
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.currency_rupee))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Zomato Money",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Zomato Money",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -335,15 +383,20 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
                                   Icons.calendar_view_month_outlined))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Claim Gift Card",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Claim Gift Card",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -351,14 +404,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.wallet))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Zomato Wallet",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Zomato Wallet",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -366,14 +424,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.credit_score_outlined))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Zomato Credits",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Zomato Credits",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -381,14 +444,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.payment_outlined))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Payment settings",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Payment settings",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -398,7 +466,7 @@ class ProfilPageView extends GetView<ProfilPageController> {
                 ),
               ),
               Card(
-                  color: Colors.white,
+                  color: AppColors.white,
                   child: Column(children: [
                     const ListTile(
                       title: Text("Table bookings",
@@ -406,14 +474,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.bookmark))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Your bookings",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Your bookings",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -421,14 +494,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.message))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Table booking help",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Table booking help",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -436,23 +514,31 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                   ])),
               Card(
-                color: Colors.white,
+                color: AppColors.white,
                 child: Column(
                   children: [
-                    const ListTile(
+                    ListTile(
                       title: Text("More",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall
+                              ?.copyWith(fontWeight: FontWeight.bold)),
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.language))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Choose language",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Choose language",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -460,14 +546,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.album_outlined))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("About",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "About",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -475,14 +566,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.edit_square))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Send feedback",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Send feedback",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -490,14 +586,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.settings))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Settings",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Settings",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:
@@ -505,14 +606,19 @@ class ProfilPageView extends GetView<ProfilPageController> {
                     ),
                     ListTile(
                       leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
+                          backgroundColor: AppColors.white,
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.logout_rounded))),
                       title: TextButton(
                           onPressed: () {},
-                          child: const Text("Log out",
-                              style: TextStyle(color: Colors.black))),
+                          child: Text(
+                            "Log out",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(color: AppColors.blackColor),
+                          )),
                       trailing: IconButton(
                           onPressed: () {},
                           icon:

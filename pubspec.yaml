@@ -21,19 +21,6 @@ dev_dependencies:
 flutter: 
   uses-material-design: true
   assets:
-   - assets/delivery_boy.png
-   - assets/delivery.png
-   - assets/food.png
-   - assets/food_delivery.png
-   - assets/free_dev.jpg
-   - assets/food1.webp
-   - assets/panner2.png
-   - assets/biriyani.png
-   - assets/veg_biriyani.png
-   - assets/biriyani_pulao.png
-   - assets/mutton-biryani.png
-   - assets/biriyani_dum.png
-   - assets/panner_masala.png
    - assets/blackforest.png
    - assets/cake-img.jpg
    - assets/cake1.jpeg

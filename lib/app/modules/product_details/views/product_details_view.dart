@@ -1,11 +1,9 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
-
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:hunger/app/core/app_config/app_colors.dart';
+import 'package:hunger/app/core/app_config/app_sizes.dart';
 import 'package:hunger/app/modules/product_details/widgets/rating.dart';
-
 import '../controllers/product_details_controller.dart';
 
 class ProductDetailsView extends GetView<ProductDetailsController> {
@@ -16,7 +14,6 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
         appBar: AppBar(
-          // automaticallyImplyLeading: true,
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
           ],
@@ -28,8 +25,8 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
               Stack(
                 children: [
                   SizedBox(
-                    width: 420,
-                    height: 300,
+                    width: AppSizes.x42_00,
+                    height: AppSizes.x37_00,
                     child: Image.asset(
                       "assets/cake-img.jpg",
                       fit: BoxFit.fill,
@@ -37,8 +34,8 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                   ),
                   Obx(
                     () => Positioned(
-                        right: 20.0,
-                        bottom: 20.0,
+                        right: AppSizes.x2_5,
+                        bottom: AppSizes.x2_5,
                         child: CircleAvatar(
                           child: IconButton(
                               onPressed: () {
@@ -51,67 +48,73 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                               icon: controller.favoriteClicked.value
                                   ? const Icon(
                                       Icons.favorite_rounded,
-                                      color: Colors.red,
+                                      color: AppColors.rustedOrange,
                                     )
                                   : const Icon(Icons.favorite_border_outlined)),
                         )),
                   ),
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 8.0),
+              Padding(
+                padding: const EdgeInsets.only(left: AppSizes.x1_00),
                 child: Row(
                   children: [
-                    Text(
-                      "Black forest",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    Text("Black forest",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(
+                                fontSize: AppSizes.x2_5,
+                                fontWeight: FontWeight.bold)),
+                    const SizedBox(
+                      width: AppSizes.x1_00,
                     ),
-                    SizedBox(
-                      width: 7,
+                    const Rating(
+                      color: AppColors.ratingColor,
                     ),
-                    Rating(
-                      color: Colors.amber,
+                    const Rating(
+                      color: AppColors.ratingColor,
                     ),
-                    Rating(
-                      color: Colors.amber,
+                    const Rating(
+                      color: AppColors.ratingColor,
                     ),
-                    Rating(
-                      color: Colors.amber,
+                    const Rating(
+                      color: AppColors.ratingColor,
                     ),
-                    Rating(
-                      color: Colors.amber,
+                    const Rating(),
+                    const SizedBox(
+                      width: AppSizes.x1_00,
                     ),
-                    Rating(),
-                    SizedBox(
-                      width: 7,
-                    ),
-                    Text("59 ratings"),
+                    const Text("59 ratings"),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: AppSizes.x1_50),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Row(
+                    Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.currency_rupee,
-                          size: 15,
+                          size: AppSizes.x1_87,
                         ),
                         Text(
                           "400",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 19),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall
+                              ?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: AppSizes.x2_37),
                         ),
                       ],
                     ),
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.orange),
+                          color: AppColors.rustedOrange),
                       child: Row(
                         children: [
                           InkWell(
@@ -123,8 +126,8 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                               },
                               child: const Icon(
                                 Icons.remove,
-                                color: Colors.white,
-                                size: 18,
+                                color: AppColors.white,
+                                size: AppSizes.x2_37,
                               )),
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 6),
@@ -132,18 +135,22 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                                 horizontal: 4, vertical: 1),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
-                                color: Colors.orange),
+                                color: AppColors.rustedOrange),
                             child: Obx(
                               () {
                                 final addedValue =
                                     controller.productAdded.value;
                                 final convertedValue =
+                                    // ignore: prefer_interpolation_to_compose_strings
                                     addedValue.toString() + " ";
-                                return Text(
-                                  convertedValue,
-                                  style: const TextStyle(
-                                      color: Colors.white, fontSize: 16),
-                                );
+                                return Text(convertedValue,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall
+                                        ?.copyWith(
+                                          color: AppColors.white,
+                                          fontSize: AppSizes.x2_37,
+                                        ));
                               },
                             ),
                           ),
@@ -156,8 +163,8 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                               },
                               child: const Icon(
                                 Icons.add,
-                                color: Colors.white,
-                                size: 18,
+                                color: AppColors.white,
+                                size: AppSizes.x2_37,
                               )),
                         ],
                       ),
@@ -165,34 +172,37 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                   ],
                 ),
               ),
-              const ListTile(
-                contentPadding: EdgeInsets.symmetric(horizontal: 8),
+              ListTile(
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: AppSizes.x1_00),
                 title: Text(
                   "Description",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontSize: AppSizes.x2_5, fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text(
+                subtitle: const Text(
                     maxLines: null,
                     "A sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening any of a variety of breads, often rich or delicate."),
               ),
               const Divider(
-                color: Colors.grey,
+                color: AppColors.grey,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppSizes.x1_50),
                 child: Text(
                   "Recommended sides",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      fontSize: AppSizes.x2_5, fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: AppSizes.x1_87),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
+                        padding: const EdgeInsets.only(right: AppSizes.x1_87),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           elevation: 2,
@@ -202,18 +212,21 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                             children: [
                               Image.asset(
                                 "assets/blackforest.png",
-                                width: 100,
-                                height: 100,
+                                width: AppSizes.x12_5,
+                                height: AppSizes.x12_5,
                               ),
-                              const Text(
+                              Text(
                                 "Black forest",
-                                style: TextStyle(fontSize: 16),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(fontSize: AppSizes.x2_00),
                               ),
                               Row(
                                 children: [
                                   const Icon(
                                     Icons.currency_rupee_sharp,
-                                    size: 15,
+                                    size: AppSizes.x1_87,
                                   ),
                                   Text(
                                     "315",
@@ -221,17 +234,12 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                                         .copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
-                                    width: 15,
+                                    width: AppSizes.x1_87,
                                   ),
                                   IconButton(
-                                      // style: IconButton.styleFrom(
-                                      //     side: const BorderSide(
-                                      //         color: Colors.amber, width: 2)),
                                       onPressed: () {},
-                                      icon: const Icon(
-                                        Icons.add_circle_outline,
-                                        color: Colors.amber,
-                                      ))
+                                      icon: const Icon(Icons.add_circle_outline,
+                                          color: AppColors.ratingColor))
                                 ],
                               )
                             ],
@@ -239,7 +247,7 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
+                        padding: const EdgeInsets.only(right: AppSizes.x1_87),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           elevation: 2,
@@ -249,19 +257,20 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                             children: [
                               Image.asset(
                                 "assets/cake1.jpeg",
-                                width: 100,
-                                height: 100,
+                                width: AppSizes.x12_5,
+                                height: AppSizes.x12_5,
                                 fit: BoxFit.cover,
                               ),
-                              const Text(
+                              Text(
                                 "Burger",
-                                style: TextStyle(fontSize: 16),
+                                style: textTheme.titleSmall!
+                                    .copyWith(fontSize: AppSizes.x2_00),
                               ),
                               Row(
                                 children: [
                                   const Icon(
                                     Icons.currency_rupee_sharp,
-                                    size: 15,
+                                    size: AppSizes.x1_87,
                                   ),
                                   Text(
                                     "190",
@@ -269,16 +278,13 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                                         .copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: AppSizes.x1_50,
                                   ),
                                   IconButton(
-                                      // style: IconButton.styleFrom(
-                                      //     side: const BorderSide(
-                                      //         color: Colors.amber, width: 2)),
                                       onPressed: () {},
                                       icon: const Icon(
                                         Icons.add_circle_outline,
-                                        color: Colors.amber,
+                                        color: AppColors.ratingColor,
                                       ))
                                 ],
                               )
@@ -287,7 +293,7 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
+                        padding: const EdgeInsets.only(right: AppSizes.x1_87),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           elevation: 2,
@@ -297,19 +303,20 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                             children: [
                               Image.asset(
                                 "assets/cake2.jpeg",
-                                width: 100,
-                                height: 100,
+                                width: AppSizes.x12_5,
+                                height: AppSizes.x12_5,
                                 fit: BoxFit.cover,
                               ),
-                              const Text(
+                              Text(
                                 "Dark forest",
-                                style: TextStyle(fontSize: 16),
+                                style: textTheme.titleSmall!
+                                    .copyWith(fontSize: AppSizes.x2_00),
                               ),
                               Row(
                                 children: [
                                   const Icon(
                                     Icons.currency_rupee_sharp,
-                                    size: 15,
+                                    size: AppSizes.x1_87,
                                   ),
                                   Text(
                                     "420",
@@ -317,16 +324,13 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                                         .copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: AppSizes.x1_50,
                                   ),
                                   IconButton(
-                                      // style: IconButton.styleFrom(
-                                      //     side: const BorderSide(
-                                      //         color: Colors.amber, width: 2)),
                                       onPressed: () {},
                                       icon: const Icon(
                                         Icons.add_circle_outline,
-                                        color: Colors.amber,
+                                        color: AppColors.ratingColor,
                                       ))
                                 ],
                               )
@@ -335,7 +339,7 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
+                        padding: const EdgeInsets.only(right: AppSizes.x1_87),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           elevation: 2,
@@ -345,19 +349,20 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                             children: [
                               Image.asset(
                                 "assets/cake3.jpeg",
-                                width: 100,
-                                height: 100,
+                                width: AppSizes.x12_5,
+                                height: AppSizes.x12_5,
                                 fit: BoxFit.cover,
                               ),
-                              const Text(
+                              Text(
                                 "vennala",
-                                style: TextStyle(fontSize: 16),
+                                style: textTheme.titleSmall!
+                                    .copyWith(fontSize: AppSizes.x2_00),
                               ),
                               Row(
                                 children: [
                                   const Icon(
                                     Icons.currency_rupee_sharp,
-                                    size: 15,
+                                    size: AppSizes.x1_87,
                                   ),
                                   Text(
                                     "215",
@@ -365,16 +370,13 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                                         .copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: AppSizes.x1_50,
                                   ),
                                   IconButton(
-                                      // style: IconButton.styleFrom(
-                                      //     side: const BorderSide(
-                                      //         color: Colors.amber, width: 2)),
                                       onPressed: () {},
                                       icon: const Icon(
                                         Icons.add_circle_outline,
-                                        color: Colors.amber,
+                                        color: AppColors.ratingColor,
                                       ))
                                 ],
                               )
@@ -383,7 +385,7 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
+                        padding: const EdgeInsets.only(right: AppSizes.x1_87),
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           elevation: 2,
@@ -393,18 +395,21 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                             children: [
                               Image.asset(
                                 "assets/blackforest.png",
-                                width: 100,
-                                height: 100,
+                                width: AppSizes.x12_5,
+                                height: AppSizes.x12_5,
                               ),
-                              const Text(
+                              Text(
                                 "Black forest",
-                                style: TextStyle(fontSize: 16),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(fontSize: AppSizes.x2_00),
                               ),
                               Row(
                                 children: [
                                   const Icon(
                                     Icons.currency_rupee_sharp,
-                                    size: 15,
+                                    size: AppSizes.x1_87,
                                   ),
                                   Text(
                                     "315",
@@ -412,16 +417,13 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                                         .copyWith(fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: AppSizes.x1_50,
                                   ),
                                   IconButton(
-                                      // style: IconButton.styleFrom(
-                                      //     side: const BorderSide(
-                                      //         color: Colors.amber, width: 2)),
                                       onPressed: () {},
                                       icon: const Icon(
                                         Icons.add_circle_outline,
-                                        color: Colors.amber,
+                                        color: AppColors.ratingColor,
                                       ))
                                 ],
                               )
@@ -442,35 +444,34 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
     return showModalBottomSheet(
         context: context,
         builder: (context) => SizedBox(
-              height: 100,
+              height: AppSizes.x12_5,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: AppSizes.x1_50),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Total:",
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
-                    ),
+                    Text("Total:",
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            fontSize: AppSizes.x2_87,
+                            fontWeight: FontWeight.bold)),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange),
+                            backgroundColor: AppColors.rustedOrange),
                         onPressed: () {},
                         child: const Row(
                           children: [
                             Icon(
                               Icons.shopping_cart,
-                              color: Colors.white,
+                              color: AppColors.white,
                             ),
                             Text(
                               " Add to cart",
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
+                              style: TextStyle(
+                                  fontSize: AppSizes.x1_87,
+                                  color: AppColors.white),
                             ),
                           ],
                         ))
-                    // o(onPressed: () {}, child: Text("Add to cart"))
                   ],
                 ),
               ),

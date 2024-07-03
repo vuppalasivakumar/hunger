@@ -4,20 +4,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:hunger/app/core/app_config/app_colors.dart';
+import 'package:hunger/app/core/app_config/app_sizes.dart';
 
 import '../controllers/profile_details_controller.dart';
 
 class ProfileDetailsView extends GetView<ProfileDetailsController> {
   const ProfileDetailsView({super.key});
 
-
   actionButton(BuildContext context) {
     showCupertinoModalPopup(
       context: context,
       builder: (context) {
         return CupertinoActionSheet(
-            // title: Text('Select Option'),
-            // message: Text('Which option?'),
             actions: <Widget>[
               CupertinoActionSheetAction(
                 child: const Text('Delete Photo'),
@@ -53,96 +52,97 @@ class ProfileDetailsView extends GetView<ProfileDetailsController> {
         body: Column(
           children: [
             Card(
-              color: Colors.white,
+                color: AppColors.white,
                 child: Column(
-              children: [
-                ListTile(
-                  title: CircleAvatar(
-                      radius: 45.0,
-                      child: IconButton(
-                          onPressed: () {
-                            actionButton(context);
-                          },
-                          icon: const Icon(
-                            Icons.person,
-                            size: 40,
-                          ))),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                const Padding(
-                  padding:  EdgeInsets.all(12.0),
-                  child: SizedBox(
-                    height: 42.0,
-                    child:  TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Enter Name",
-                          suffixIcon: Icon(Icons.person)),
+                  children: [
+                    ListTile(
+                      title: CircleAvatar(
+                          radius: AppSizes.x5_62,
+                          child: IconButton(
+                              onPressed: () {
+                                actionButton(context);
+                              },
+                              icon: const Icon(
+                                Icons.person,
+                                size: AppSizes.x5_00,
+                              ))),
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                const Padding(
-                  padding:  EdgeInsets.all(12.0),
-                  child: SizedBox(
-                    height: 42.0,
-                    child:  TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Enter Mobile",
-                          suffixIcon: Icon(Icons.phone_enabled)),
+                    const SizedBox(
+                      height: AppSizes.x1_25,
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                const Padding(
-                  padding:  EdgeInsets.all(12.0),
-                  child: SizedBox(
-                    height: 42.0,
-                    child:  TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Enter Email",
-                          suffixIcon: Icon(Icons.email)),
+                    const Padding(
+                      padding: EdgeInsets.all(AppSizes.x1_50),
+                      child: SizedBox(
+                        height: AppSizes.x5_25,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Enter Name",
+                              suffixIcon: Icon(Icons.person)),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-               const Padding(
-                  padding:  EdgeInsets.all(12.0),
-                  child: SizedBox(
-                    height: 42.0,
-                    child:  TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Date of birth",
-                          suffixIcon: Icon(Icons.date_range_outlined)),
+                    const SizedBox(
+                      height: AppSizes.x1_25,
                     ),
-                  ),
-                ),
-               const Padding(
-                  padding:  EdgeInsets.all(12.0),
-                  child: SizedBox(
-                    height: 42.0,
-                    child:  TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Gender",
-                          suffixIcon: Icon(Icons.arrow_drop_down_sharp)),
+                    const Padding(
+                      padding: EdgeInsets.all(AppSizes.x1_50),
+                      child: SizedBox(
+                        height: AppSizes.x5_25,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Enter Mobile",
+                              suffixIcon: Icon(Icons.phone_enabled)),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ],
-            )),
+                    const SizedBox(
+                      height: AppSizes.x1_25,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(AppSizes.x1_50),
+                      child: SizedBox(
+                        height: AppSizes.x5_25,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Enter Email",
+                              suffixIcon: Icon(Icons.email)),
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(AppSizes.x1_50),
+                      child: SizedBox(
+                        height: AppSizes.x5_25,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Date of birth",
+                              suffixIcon: Icon(Icons.date_range_outlined)),
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(AppSizes.x1_50),
+                      child: SizedBox(
+                        height: AppSizes.x5_25,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Gender",
+                              suffixIcon: Icon(Icons.arrow_drop_down_sharp)),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
             const SizedBox(
-              height: 50.0,
+              height: AppSizes.x6_25,
             ),
-            ElevatedButton(onPressed: () {}, child: const Text("Update Profile"))
+            ElevatedButton(
+                onPressed: () {}, child: const Text("Update Profile"))
           ],
         ));
   }
