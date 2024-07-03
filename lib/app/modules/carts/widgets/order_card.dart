@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:hunger/app/core/app_config/app_colors.dart';
 import 'package:hunger/app/core/app_config/app_sizes.dart';
