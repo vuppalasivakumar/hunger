@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hunger/app/core/app_config/app_sizes.dart';
 import 'package:hunger/app/modules/carts/widgets/order_card.dart';
 
 import '../controllers/carts_controller.dart';
@@ -9,24 +10,27 @@ class CartsView extends GetView<CartsController> {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
         leading:
             IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-        title: const Text(
+        title:  Text(
           "Your Order",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.bold
+          ),
         ),
         centerTitle: true,
-        actions: const [
-          Icon(
-            Icons.question_mark_rounded,
-            size: 28.0,
-          ),
-          SizedBox(
-            width: 30.0,
-          )
-        ],
+        // actions:  [
+        //   Icon(
+        //     Icons.question_mark_rounded,
+        //     size: 28.0,
+        //   ),
+        //   SizedBox(
+        //     width: 30.0,
+        //   )
+        // ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,22 +105,23 @@ class CartsView extends GetView<CartsController> {
           Obx(
             () => Card(
                 child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
+              padding: const EdgeInsets.symmetric(vertical: AppSizes.x3_75),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ListTile(
                     leading: Text(
                       "Total price",
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 22.0, fontWeight: FontWeight.bold),
+                      style: textTheme.titleMedium?.copyWith(
+                          fontSize: AppSizes.x2_75,
+                          fontWeight: FontWeight.bold),
                     ),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(
                           Icons.currency_rupee,
-                          size: 20.0,
+                          size: AppSizes.x2_50,
                         ),
                         Text(
                           controller.totalprice.value.toString(),
@@ -124,7 +129,8 @@ class CartsView extends GetView<CartsController> {
                               .textTheme
                               .titleMedium
                               ?.copyWith(
-                                  fontSize: 20.0, fontWeight: FontWeight.bold),
+                                  fontSize: AppSizes.x2_50,
+                                  fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
