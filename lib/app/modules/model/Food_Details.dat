@@ -1,0 +1,31 @@
+class FoodMenu {
+    String? title;
+    String? subTitle;
+    String? trailing;
+    String? bio;
+    double? version;
+
+    FoodMenu({
+        this.title,
+        this.subTitle,
+        this.trailing,
+        this.bio,
+        this.version,
+    });
+
+    factory FoodMenu.fromJson(Map<String, dynamic> json) => FoodMenu(
+        title: json["title"],
+        subTitle: json["sub-title"],
+        trailing: json["trailing"],
+        bio: json["bio"],
+        version: json["version"]?.toDouble(),
+    );
+
+    Map<String, dynamic> toJson() => {
+        "title": title,
+        "sub-title": subTitle,
+        "trailing": trailing,
+        "bio": bio,
+        "version": version,
+    };
+}
