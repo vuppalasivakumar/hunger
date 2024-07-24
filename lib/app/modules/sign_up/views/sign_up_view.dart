@@ -3,15 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hunger/app/core/app_config/app_colors.dart';
 import 'package:hunger/app/core/app_config/app_sizes.dart';
-// import 'package:hunger/app/modules/sign_up/controllers/sign_up_controller.dart';
-import 'package:hunger/app/services/firebase_controller.dart';
-// import 'package:hunger/app/services/auth_services.dart';
-// import 'package:hunger/app/modules/sign_up/controllers/sign_up_controller.dart';
-// import 'package:hunger/app/services/firbase_controller.dart';
-// import 'package:hunger/app/services/firbase_controller.dart';
-// import 'package:hunger/app/routes/app_pages.dart';
+import 'package:hunger/app/routes/app_pages.dart';
 
-// import '../controllers/sign_up_controller.dart';
+import 'package:hunger/app/services/firebase_controller.dart';
 
 class SignUpView extends GetView<FirebaseController> {
   SignUpView({super.key});
@@ -23,17 +17,6 @@ class SignUpView extends GetView<FirebaseController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'SignUpView',
-          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-              fontFamily: 'Montserrat',
-              fontSize: 25.0,
-              fontWeight: FontWeight.w800,
-              fontStyle: FontStyle.italic),
-        ),
-        centerTitle: true,
-      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -42,30 +25,29 @@ class SignUpView extends GetView<FirebaseController> {
             children: [
               Text('Add your Details to signup',
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontSize: 17.0,
+                      fontSize: AppSizes.x2_12,
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Montserrat',
                       fontStyle: FontStyle.normal)),
-              const SizedBox(height: 20.0),
-              //  text Fields
+              const SizedBox(height: AppSizes.x2_50),
               Padding(
-                padding:EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
+                padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
                 child: TextField(
                   controller: firstname,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15.0),
+                        borderRadius: BorderRadius.circular(AppSizes.x1_88),
                       ),
                       hintText: 'First Name',
                       hintStyle: Theme.of(context)
                           .textTheme
                           .titleMedium
-                          ?.copyWith(fontFamily: 'Montserrat', fontSize: 16.0)),
+                          ?.copyWith(fontFamily: 'Montserrat', fontSize: AppSizes.x2_00)),
                 ),
               ),
               SizedBox(
-                height: 18.0,
+                height: AppSizes.x2_25,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
@@ -74,17 +56,17 @@ class SignUpView extends GetView<FirebaseController> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15.0),
+                        borderRadius: BorderRadius.circular(AppSizes.x1_88),
                       ),
                       hintText: 'Last Name',
                       hintStyle: Theme.of(context)
                           .textTheme
                           .titleMedium
-                          ?.copyWith(fontFamily: 'Montserrat', fontSize: 16.0)),
+                          ?.copyWith(fontFamily: 'Montserrat', fontSize: AppSizes.x2_00)),
                 ),
               ),
               SizedBox(
-                height: 18.0,
+                height: AppSizes.x2_25,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
@@ -93,17 +75,17 @@ class SignUpView extends GetView<FirebaseController> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15.0),
+                        borderRadius: BorderRadius.circular(AppSizes.x1_88),
                       ),
                       hintText: 'Enter Your Email',
                       hintStyle: Theme.of(context)
                           .textTheme
                           .titleMedium
-                          ?.copyWith(fontFamily: 'Montserrat', fontSize: 16.0)),
+                          ?.copyWith(fontFamily: 'Montserrat', fontSize: AppSizes.x2_00)),
                 ),
               ),
               SizedBox(
-                height: 18.0,
+                height: AppSizes.x2_25,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: AppSizes.x2_90),
@@ -112,23 +94,22 @@ class SignUpView extends GetView<FirebaseController> {
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15.0),
+                        borderRadius: BorderRadius.circular(AppSizes.x1_88),
                       ),
                       hintText: 'Enter Your Password',
                       hintStyle: Theme.of(context)
                           .textTheme
                           .titleMedium
-                          ?.copyWith(fontFamily: 'Montserrat', fontSize: 16.0)),
+                          ?.copyWith(fontFamily: 'Montserrat', fontSize: AppSizes.x2_00)),
                 ),
               ),
               SizedBox(
-                height: 18.0,
+                height: AppSizes.x2_25,
               ),
-              // .......Sign up button.........//
               TextButton(
                   onPressed: () {
                     controller.creatingUser(firstname.text, lastname.text,
-                        email.text, password.text);
+                        email.text, password.text, context);
                   },
                   style: ButtonStyle(
                       backgroundColor:
@@ -137,16 +118,15 @@ class SignUpView extends GetView<FirebaseController> {
                     padding: EdgeInsets.symmetric(horizontal: AppSizes.x7_75),
                     child: Text(
                       'Sign Up',
-                      // style: TextStyle(color: AppColors.white),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: AppColors.white,
-                          fontSize: 15.0,
+                          fontSize: AppSizes.x1_88,
                           fontWeight: FontWeight.w800,
                           fontFamily: 'Montserrat'),
                     ),
                   )),
               SizedBox(
-                height: 2.0,
+                height: AppSizes.x0_25,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -156,10 +136,12 @@ class SignUpView extends GetView<FirebaseController> {
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         fontWeight: FontWeight.w500,
                         fontFamily: 'Montserrat',
-                        fontSize: 15.0),
+                        fontSize: AppSizes.x1_88),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.LOGIN);
+                      },
                       child: Text('Login',
                           style: Theme.of(context)
                               .textTheme
@@ -167,12 +149,12 @@ class SignUpView extends GetView<FirebaseController> {
                               ?.copyWith(
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'Montserrat',
-                                  fontSize: 15.0,
+                                  fontSize: AppSizes.x1_88,
                                   color: AppColors.linkTextColor)))
                 ],
               ),
               SizedBox(
-                height: 2.0,
+                height: AppSizes.x0_25,
               ),
             ],
           ),
