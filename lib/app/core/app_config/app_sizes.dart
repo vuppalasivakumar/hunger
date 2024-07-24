@@ -3,7 +3,7 @@ class AppSizes {
   static const x1_00 = 8.0;
   static const x1_25 = 10.0;
   static const x1_62 = 14.0;
-  static const x1_88 = 15.0;
+  static const x1_88 = 15.0
   static const x2_00 = 16.0;
   static const x2_12 = 17.0;
   static const x2_25 = 18.0;
